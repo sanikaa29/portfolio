@@ -67,7 +67,7 @@
     { title: "Springer Publication", year: "2024", image: "assets/ms-socta-2024.jpg", pos: "72% center",
       body: "Presented first-author deep learning research on retinal disease classification at SoCTA 2024 (MNIT Jaipur), published in Springer proceedings. Owned the full experimental design, ablation study and reproducibility harness." },
     { title: "Team Leadership", year: "2024–2026", image: "assets/ms-team.jpg", pos: "center 35%",
-      body: "Captained a 60+ member aerospace team across five sub-systems. Built the review cadence, documentation standard and mentoring pipeline the team still runs on." },
+      body: "Captained a 70+ member aerospace team across 4 sub-systems. Built the review cadence, documentation standard and mentoring pipeline the team still runs on." },
   ];
 
   const root = document.documentElement;
