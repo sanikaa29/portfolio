@@ -611,9 +611,9 @@ html:not(.dark) .blob { opacity: 0.32; }
   grid-template-columns: 1.25fr 1fr;
   align-items: center;
   gap: 48px;
-  transform: translateY(calc(var(--hp, 0) * -80px)) scale(calc(1 - var(--hp, 0) * 0.08));
-  opacity: calc(1 - var(--hp, 0) * 1.2);
-  filter: blur(calc(var(--hp, 0) * 6px));
+  /* --hf stays 0 until the visitor has scrolled ~40% of a screen, so the hero stays sharp */
+  transform: translateY(calc(var(--hf, 0) * -60px)) scale(calc(1 - var(--hf, 0) * 0.05));
+  opacity: calc(1 - var(--hf, 0) * 0.9);
   will-change: transform, opacity;
 }
 .hero-badge {

@@ -253,6 +253,7 @@
 
     if (!reducedMotion) {
       hero.style.setProperty("--hp", clamp(y / (vh * 0.9)).toFixed(4));
+      hero.style.setProperty("--hf", clamp((y - vh * 0.4) / (vh * 0.7)).toFixed(4));
     }
 
     // Statement words
