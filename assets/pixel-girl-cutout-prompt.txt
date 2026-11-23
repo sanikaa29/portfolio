@@ -1,0 +1,2 @@
+Tool: built-in image_gen
+Prompt: Use case: background-extraction. Remove the dark navy background from this exact illustration. Output a PNG with actual transparent alpha channel outside the girl, including between legs and around hair. Keep the girl, laptop held with both hands, all clothing, face, hair, pose, pixel art style and framing unchanged. No background color, no checkerboard drawn into the image, no glow, no shadow, no new objects. This must be a transparent cutout for a website.

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Sanika Ajgaonkar — AI Engineer &amp; ML Researcher</title>
+<meta name="description" content="Portfolio of Sanika Ajgaonkar, incoming Cornell University MS-CIS student building intelligent systems across AI, software engineering and space technology." />
+<meta property="og:title" content="Sanika Ajgaonkar — AI Engineer & ML Researcher" />
+<meta property="og:description" content="Portfolio of Sanika Ajgaonkar, incoming Cornell University MS-CIS student building intelligent systems across AI, software engineering and space technology." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#000000" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="css/styles.css" />
+<script>
+  /* Apply theme + intro state before first paint to avoid flashes */
+  (function () {
+    try {
+      var t = localStorage.getItem("sa-theme") || "dark";
+      document.documentElement.classList.toggle("dark", t === "dark");
+      document.documentElement.style.colorScheme = t;
+      var seen = sessionStorage.getItem("sa-launched") === "2";
+      document.documentElement.classList.add(seen ? "no-intro" : "has-intro");
+    } catch (e) { document.documentElement.classList.add("no-intro"); }
+  })();
+</script>
+</head>
+<body>
+
+<!-- ===================== Opening intro ===================== -->
+<div id="pixel-intro">
+  <div id="intro-stars" aria-hidden="true"></div>
+  <div id="intro-sparkles" aria-hidden="true"></div>
+
+  <div class="intro-glow" aria-hidden="true"></div>
+  <div class="intro-brand" aria-hidden="true"><span class="brand-mark">SA</span><span>Portfolio</span></div>
+
+  <div class="intro-inner">
+    <button type="button" id="pixel-girl-btn" aria-label="Click to see Sanika’s portfolio">
+      <span class="pg-floor-glow" aria-hidden="true"></span>
+      <span class="intro-character" aria-hidden="true">
+        <img class="pixel-girl-reference" src="assets/pixel-girl-laptop-transparent.png" alt="" width="1024" height="1536" />
+        <span class="intro-laptop-lid">
+          <span class="intro-laptop-display"><span>Sanika<br /><span class="aurora-text">Ajgaonkar</span></span><small>AI · SOFTWARE · SPACE</small></span>
+        </span>
+      </span>
+    </button>
+
+    <div class="intro-meta">
+      <p class="intro-title">Sanika Ajgaonkar</p>
+      <p class="intro-role">AI Engineer &amp; ML Researcher <span aria-hidden="true">·</span> Cornell University</p>
+    </div>
+
+    <button type="button" class="intro-hint" id="intro-hint">
+      Click to see Sanika’s portfolio <span class="intro-arrow" aria-hidden="true">→</span>
+    </button>
+    <p class="intro-key" aria-hidden="true">or press <kbd>Enter</kbd></p>
+    <button type="button" id="skip-intro">Skip intro</button>
+  </div>
+
+  <div class="laptop-portal" id="laptop-portal" aria-hidden="true"></div>
+</div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===================== Nav ===================== -->
+<header class="site-header" id="site-header">
+  <nav aria-label="Primary" class="site-nav">
+    <a href="#home" class="nav-brand" aria-label="Sanika Ajgaonkar — home">
+      <span class="brand-mark" aria-hidden="true">SA</span>
+      <span>Sanika</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#overview" data-section="overview">Overview</a></li>
+      <li><a href="#education" data-section="education">Education</a></li>
+      <li><a href="#experience" data-section="experience">Experience</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
+      <li><a href="#achievements" data-section="achievements">Leadership</a></li>
+      <li><a href="#research" data-section="research">Research</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#contact" data-section="contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light mode">
+        <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="/resume.pdf" class="nav-cta">Resume</a>
+      <button type="button" id="menu-toggle" class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Leadership</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== Hero ===================== -->
+  <section id="home" class="hero">
+    <div class="hero-aurora" aria-hidden="true">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    </div>
+    <div class="hero-grain" aria-hidden="true"></div>
+
+    <div class="hero-inner container" id="hero-inner">
+      <div class="hero-content">
+        <p class="hero-badge hero-in" style="--d:0">
+          <span><strong>Cornell University</strong>, MS in Computer &amp; Information Systems</span>
+        </p>
+
+        <h1 class="hero-title" tabindex="-1">
+          <span class="line"><span class="hero-in" style="--d:1">Sanika</span></span>
+          <span class="line"><span class="hero-in gradient-text" style="--d:2">Ajgaonkar</span></span>
+        </h1>
+
+        <p class="hero-lede hero-in" style="--d:3">
+          I build intelligent systems that bridge space technology, artificial intelligence, and
+          real-world impact.
+        </p>
+
+        <div class="hero-status hero-in" style="--d:4">
+          <span class="hero-status-dot" aria-hidden="true"></span>
+          Looking for internships · Summer 2027
+        </div>
+
+        <div class="hero-actions hero-in" style="--d:5">
+          <a href="https://github.com/sanikaa29" target="_blank" rel="noreferrer" class="btn btn-secondary magnetic">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.16c-3.2.69-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.69 1.26 3.35.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.41.35.78 1.04.78 2.1v3.12c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sanikaa29" target="_blank" rel="noreferrer" class="btn btn-secondary magnetic">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.59c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94V21h-4V9Z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:sa2494@cornell.edu" class="btn btn-primary magnetic">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual hero-in" style="--d:2" id="hero-visual">
+        <div class="hero-halo" aria-hidden="true"></div>
+        <div class="hero-orbit-ring r1" aria-hidden="true"><span></span></div>
+        <div class="hero-orbit-ring r2" aria-hidden="true"><span></span></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="hero-portrait" src="assets/pixel-girl-cutout.png" alt="Pixel-art illustration of Sanika wearing headphones and holding a closed laptop with both hands" width="1024" height="1536" />
+      </div>
+    </div>
+
+    <a href="#overview" class="scroll-cue" aria-label="Scroll to overview">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===================== Overview ===================== -->
+  <section id="overview" class="section">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Overview</h2>
+      </header>
+
+      <p class="statement" id="statement">
+        I&rsquo;m a Master&rsquo;s student in Computer &amp; Information Systems at Cornell University, passionate about building intelligent software that solves real-world problems.
+      </p>
+
+      <div class="overview-rows" data-stagger>
+        <div class="overview-row reveal">
+          <p class="overview-label">What I do</p>
+          <p>
+            My work spans AI, software engineering, and product development—from developing machine
+            learning models and GenAI applications to building scalable systems with real-world impact.
+            I&rsquo;ve worked at Ernst &amp; Young and On My Own Technology.
+          </p>
+        </div>
+        <div class="overview-row reveal">
+          <p class="overview-label">Leadership</p>
+          <p>
+            I led a team of 70+ students as Team Lead of a canister satellite student team, winning
+            All India Rank 1 at the International CanSat Competition 2025, organized by the American
+            Astronautical Society and NASA, and Winners at the IN-SPACe CanSat Competition 2025 by the
+            Astronautical Society of India and ISRO.
+          </p>
+        </div>
+        <div class="overview-row reveal">
+          <p class="overview-label">Research</p>
+          <p>
+            I&rsquo;ve published research in deep learning, and I&rsquo;m particularly interested in medical
+            segmentation and understanding how insights from the brain can shape the next generation of AI.
+            My research interests include ML &amp; computational neuroscience, where I aim to bridge the
+            gap between biological and artificial intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Education ===================== -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Education</h2>
+      </header>
+
+      <div class="edu-grid" data-stagger>
+        <article class="card edu-card reveal spotlight">
+          <div class="edu-top">
+            <span class="edu-logo"><img src="assets/logo-cornell.png" alt="Cornell University seal" width="500" height="500" /></span>
+            <div class="edu-status">
+              <span class="pill pill-accent">Current</span>
+              <p class="edu-date">August 2026 – May 2028</p>
+            </div>
+          </div>
+          <h3>Cornell University</h3>
+          <p class="degree">Master of Science in Computer &amp; Information Systems</p>
+          <p class="meta">New York, USA</p>
+          <p class="eyebrow small">Coursework</p>
+          <ul class="chips">
+            <li>Applied Machine learning</li>
+            <li>Algorithms &amp; Data Structures</li>
+            <li>AI for Healthcare</li>
+            <li>Human-Computer Interaction</li>
+            <li>Business Fundamentals</li>
+          </ul>
+        </article>
+
+        <article class="card edu-card reveal spotlight">
+          <div class="edu-top">
+            <span class="edu-logo"><img src="assets/logo-mumbai.png" alt="University of Mumbai coat of arms" width="500" height="505" /></span>
+            <div class="edu-status">
+              <span class="pill pill-accent">GPA: 3.75</span>
+              <p class="edu-date">November 2022 – May 2026</p>
+            </div>
+          </div>
+          <h3>University of Mumbai</h3>
+          <p class="degree">Bachelor of Technology in Electronics &amp; Telecommunication (Honors in AI &amp; ML)</p>
+          <p class="meta">Mumbai, India</p>
+          <p class="eyebrow small">Coursework</p>
+          <ul class="chips">
+            <li>Computer Networks</li>
+            <li>Deep Learning</li>
+            <li>Digital Image Processing</li>
+            <li>Database Management Systems</li>
+            <li>Microcontroller &amp; Applications</li>
+            <li>Radiating Systems</li>
+            <li>Analog Communication</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Experience ===================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Experience</h2>
+      </header>
+
+      <div class="timeline">
+        <span class="timeline-line" aria-hidden="true"><span id="timeline-fill"></span></span>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="card exp-card spotlight">
+            <div class="exp-head">
+              <div class="exp-logo exp-logo-ey"><img src="assets/logo-ey.png" alt="Ernst &amp; Young logo" width="500" height="505" /></div>
+              <div>
+                <h3>GenAI Intern</h3>
+                <p class="exp-company">Ernst &amp; Young (EY)</p>
+              </div>
+              <p class="exp-meta">India · Aug. 2025 – Sep. 2025</p>
+            </div>
+            <ul class="exp-details">
+              <li>Architected a Python document-processing pipeline using BERT for section classification and GPT-4 for entity and KPI extraction into validated structured data, achieving 91% field-level accuracy against manually verified ground truth.</li>
+              <li>Engineered a FastAPI backend for document ingestion and automated financial data extraction, implementing schema validation and PostgreSQL persistence for structured financial data.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="card exp-card spotlight">
+            <div class="exp-head">
+              <div class="exp-logo exp-logo-omotec" aria-hidden="true">OMOTEC</div>
+              <div>
+                <h3>Research Intern</h3>
+                <p class="exp-company">On My Own Technology (OMOTEC)</p>
+              </div>
+              <p class="exp-meta">India · Jun. 2024 – Aug. 2024</p>
+            </div>
+            <ul class="exp-details">
+              <li>Deployed a Python backend on Google Cloud Run to process sensor data &amp; store readings in Firestore for historical analysis.</li>
+              <li>Designed a scikit-learn Random Forest forecasting pipeline using 20,000+ sensor readings to predict 7 environmental metrics up to 7 days ahead, with Cloud Scheduler automating predictions every 30 minutes.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Skills ===================== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Skills</h2>
+      </header>
+
+      <div class="bento" data-stagger>
+        <div class="card bento-item reveal spotlight b-lang">
+          <span class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <p class="bento-title">Languages</p>
+          <ul class="chips">
+            <li>Python</li><li>SQL</li><li>Java</li><li>C++</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="card bento-item reveal spotlight b-ai">
+          <span class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg></span>
+          <p class="bento-title">AI / ML</p>
+          <ul class="chips">
+            <li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Scikit-Learn</li><li>NumPy</li><li>Pandas</li><li>XGBoost</li><li>HuggingFace</li><li>LangChain</li><li>LangGraph</li>
+          </ul>
+        </div>
+        <div class="card bento-item reveal spotlight b-web">
+          <span class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span>
+          <p class="bento-title">Full Stack</p>
+          <ul class="chips">
+            <li>React.js</li><li>Node.js</li>
+          </ul>
+        </div>
+        <div class="card bento-item reveal spotlight b-cloud">
+          <span class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.3-8.8A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19Z"/></svg></span>
+          <p class="bento-title">Cloud, Data &amp; Tools</p>
+          <ul class="chips">
+            <li>Docker</li><li>PostgreSQL</li><li>Git</li><li>AWS</li><li>GCP</li><li>Tableau</li>
+          </ul>
+        </div>
+        <div class="card bento-item reveal spotlight b-aitools">
+          <span class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8Z"/></svg></span>
+          <p class="bento-title">AI Developer Tools</p>
+          <ul class="chips">
+            <li>GitHub Copilot</li><li>Claude Code</li><li>Codex</li><li>Gemini</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Leadership & Milestones ===================== -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Leadership &amp; Milestones</h2>
+      </header>
+
+      <article class="card leadership-card reveal" aria-labelledby="leadership-role-heading">
+        <div class="leadership-side">
+          <img src="assets/team-lead.jpg" alt="Sanika holding the CanSat India trophy beside the team's rockets at the SVKM EXTC department" loading="lazy" />
+          <div class="leadership-side-overlay">
+            <h3 id="leadership-role-heading">Team Lead</h3>
+            <p class="leadership-team">Canister Satellite Team — DJS Arya</p>
+          </div>
+        </div>
+        <ul class="leadership-details">
+          <li>Led and mentored a <strong>70+ member multidisciplinary engineering team</strong> to <strong>All India Rank 1 (90.54%)</strong> at the 2025 International CanSat Competition by NASA &amp; AAS, <strong>Global Rank 15</strong>, and the <strong>2025 IN-SPACe National Championship</strong> among 80+ institutes.</li>
+          <li>Guided the team to win the <strong>2026 Mark Waker Ground Station Award</strong>, coordinating project execution, team responsibilities, competition deliverables, and cross-functional collaboration across engineering divisions.</li>
+          <li>Established structured <strong>project workflows, timelines, milestones, and review processes</strong> to coordinate design, development, testing, documentation, and mission-readiness activities across multiple teams.</li>
+          <li>Managed cross-functional collaboration among <strong>70+ students</strong>, aligning team leads, resolving dependencies, tracking progress, and ensuring timely completion of critical project deliverables.</li>
+          <li>Secured <strong>5 sponsorship partnerships</strong> with KeyShot, Altium, SolidWorks, OAS, and 3D-printing partners by preparing proposals, coordinating outreach, and communicating project requirements and partnership value.</li>
+          <li>Presented <strong>project strategy, resource requirements, and progress updates</strong> to college trustees while representing the team in technical and design presentations before international competition juries.</li>
+          <li>Trained and mentored junior team members, established knowledge-transfer practices, and delegated responsibilities to build continuity and technical ownership within the organization.</li>
+        </ul>
+      </article>
+
+      <div class="carousel-head reveal">
+        <h3 class="sub-heading">Milestones</h3>
+        <div class="carousel-controls">
+          <button type="button" id="milestone-prev" class="round-btn" aria-label="Previous milestones">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" id="milestone-next" class="round-btn" aria-label="Next milestones">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel reveal" id="milestones-track"><!-- populated by JS --></div>
+    <div class="carousel-dots" id="milestone-dots" aria-hidden="true"></div>
+  </section>
+
+  <div class="modal-overlay" id="milestone-modal" role="dialog" aria-modal="true" aria-labelledby="milestone-modal-title">
+    <div class="modal-box" id="milestone-modal-box">
+      <button type="button" class="modal-close" id="milestone-modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-media" id="milestone-modal-media">
+        <div class="slide-bg" id="milestone-slide-bg" aria-hidden="true"></div>
+        <img id="milestone-modal-img" src="" alt="" width="1024" height="768" />
+        <button type="button" class="slide-btn slide-prev" id="milestone-slide-prev" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button type="button" class="slide-btn slide-next" id="milestone-slide-next" aria-label="Next photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="slide-dots" id="milestone-slide-dots" aria-hidden="true"></div>
+        <span class="slide-count" id="milestone-slide-count" aria-live="polite"></span>
+      </div>
+      <div class="modal-body">
+        <p class="eyebrow" id="milestone-modal-year"></p>
+        <h3 id="milestone-modal-title"></h3>
+        <p class="body" id="milestone-modal-body"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== Research ===================== -->
+  <section id="research" class="section section-alt" aria-labelledby="research-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2 id="research-heading">Research</h2>
+      </header>
+
+      <div class="pub-grid" data-stagger>
+        <article class="card pub-card pub-featured reveal spotlight">
+          <div class="pub-cover"><img src="assets/soft-computing-cover.jpg" alt="Soft Computing: Theories and Applications — SoCTA 2024, Volume 2" loading="lazy" /></div>
+          <div class="pub-body">
+            <p class="pub-venue">Published in Springer Lecture Notes in Networks and Systems, Vol. 1343 · SoCTA 2024</p>
+            <h3>Residual Neural Network Model for Automatic Classification of Multiple Classes of Brain Tumors on MRI Images</h3>
+            <p class="pub-summary">Co-authored a ResNet18 classifier for glioma, pituitary, and meningioma tumors, achieving <strong>98.44% accuracy on 7,023 MRI samples</strong> through transfer learning and data augmentation.</p>
+            <a class="btn-link" href="https://doi.org/10.1007/978-981-96-5955-5_27" target="_blank" rel="noopener noreferrer" aria-label="Read paper on brain tumor classification">Read Paper <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="card pub-card pub-featured reveal spotlight">
+          <div class="pub-cover"><img src="assets/techno-societal-cover.jpg" alt="Techno-Societal 2024 — Volume 1" loading="lazy" /></div>
+          <div class="pub-body">
+            <p class="pub-venue">Published in Springer Proceedings in Technology Transfer · Techno-Societal 2024, pp. 929–934</p>
+            <h3>Comprehensive Survey of Human Chromosome Abnormalities and Technologies for Karyotyping, Segmentation &amp; Classification</h3>
+            <p class="pub-summary">Co-authored a survey of <strong>15+ classical and deep learning methods</strong>, including CNN, ResNet, Mask R-CNN, and U-Net+YOLOv3, for chromosome segmentation, with surveyed methods achieving <strong>up to 99.3% accuracy</strong>.</p>
+            <a class="btn-link" href="https://doi.org/10.1007/978-3-032-13784-5_98" target="_blank" rel="noopener noreferrer" aria-label="Read paper on chromosome abnormalities and analysis">Read Paper <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal spotlight">
+          <span class="pub-tag">Paper</span>
+          <h3>Low Grade Glioma Segmentation from FLAIR MR Images using U-Net Variants</h3>
+          <p class="pub-venue">Presented at ICTIS 2026, Bangkok · Published in Springer Lecture Notes in Networks and Systems</p>
+        </article>
+
+        <article class="card pub-card reveal spotlight">
+          <span class="pub-tag pub-tag-patent">Patent</span>
+          <h3>Planetary Probe Device with Enhanced Payload Protection and Method Thereof</h3>
+          <p class="pub-venue">Patent application · App. No. 202421076282 A · 2024</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Projects ===================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Projects</h2>
+        <p class="intro">Systems built end to end — each one shipped, measured, and open on GitHub.</p>
+      </header>
+
+      <div class="segmented reveal" role="tablist" aria-label="Filter projects" id="project-filters">
+        <span class="segmented-thumb" id="segmented-thumb" aria-hidden="true"></span>
+        <button type="button" role="tab" aria-selected="true" class="active" data-filter="All">All</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="AI / ML">AI / ML</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="Full Stack">Full Stack</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="Security">Security</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="Mobile">Mobile</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"><!-- populated by JS --></div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section id="contact" class="section section-contact">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="container">
+      <header class="section-header center reveal">
+        <h2 class="contact-title">Let's Build Something <span class="gradient-text">Great Together</span></h2>
+        <p class="intro">I'm always open to collaborating on hard engineering problems — AI systems that need to be trustworthy, products that need to ship, and research that deserves to leave the notebook. If you're building something ambitious, send a signal.</p>
+      </header>
+
+      <div class="contact-grid" data-stagger>
+        <form class="card contact-form reveal" id="contact-form">
+          <div class="form-row">
+            <div class="field">
+              <input id="name" name="name" placeholder=" " autocomplete="name" required />
+              <label for="name">Name</label>
+            </div>
+            <div class="field">
+              <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required />
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" placeholder=" " required rows="6"></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" id="transmit-btn" class="btn btn-primary btn-wide transmit-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span id="transmit-label">Transmit Message</span>
+          </button>
+          <p aria-live="polite" class="form-status" id="form-status"></p>
+        </form>
+
+        <div class="card contact-side reveal">
+          <div class="contact-profile">
+            <div class="contact-avatar" id="contact-satellite">
+              <span class="avatar-img" role="img" aria-label="Pixel-art portrait of Sanika"></span>
+              <span class="avatar-status" title="Open to internships" aria-hidden="true"></span>
+            </div>
+            <p class="profile-name">Sanika Ajgaonkar</p>
+            <p class="profile-role">AI Engineer &amp; ML Researcher · Cornell University</p>
+          </div>
+
+          <dl class="ground-info">
+            <div>
+              <dt>Ground station</dt>
+              <dd>New York, USA</dd>
+            </div>
+          </dl>
+
+          <div class="socials">
+            <a href="mailto:sa2494@cornell.edu" aria-label="Email Sanika"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+            <a href="https://github.com/sanikaa29" target="_blank" rel="noreferrer" aria-label="GitHub profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+            <a href="https://www.linkedin.com/in/sanikaa29" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v1.5A4.5 4.5 0 0 1 16 8Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Sanika Ajgaonkar · Built with <span class="heart">💜</span> and 🛰️</p>
+    <nav aria-label="Footer" class="footer-nav">
+      <a href="https://github.com/sanikaa29" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/sanikaa29" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:sa2494@cornell.edu">Email</a>
+      <a href="/resume.pdf">Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

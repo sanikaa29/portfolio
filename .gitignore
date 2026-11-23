@@ -1,0 +1,6 @@
+# Secrets / local tooling (never commit)
+.env*
+.vercel
+
+# System files
+.DS_Store

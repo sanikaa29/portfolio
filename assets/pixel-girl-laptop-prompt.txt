@@ -1,0 +1,3 @@
+Created with built-in image_gen.
+Prompt: Repair the missing torso and floating laptop while preserving the pixel-art girl, face, headphones, pink shirt, jeans and sneakers. Have both hands naturally support a centered, closed silver/lavender laptop at waist height. Preserve full-body framing.
+Final background edit: Replace the checkerboard with dark navy #030712, keeping the character and laptop unchanged.

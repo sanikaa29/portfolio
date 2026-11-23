@@ -1,0 +1,14 @@
+backup-original
+.vercelignore
+assets/*-prompt.txt
+assets/pixel-girl-reference.png
+assets/pixel-girl-laptop.png
+assets/cansat.jpg
+assets/ms-trophy.jpg
+assets/proj-ai.jpg
+assets/proj-data.jpg
+assets/proj-db.jpg
+assets/proj-web.jpg
+assets/satellite.jpg
+.env*
+.vercel
